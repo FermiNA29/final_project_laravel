@@ -168,7 +168,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="/pertanyaans/create" class="nav-link">
               <i class="nav-icon far fa-plus-square"></i>
               <p>
                 Add a Question
@@ -177,7 +177,7 @@
           </li>
           <li class="nav-header">Public</li>
           <li class="nav-item">
-            <a href="#" class="nav-link active">
+            <a href="/pertanyaans" class="nav-link active">
               <i class="nav-icon fas fa-question"></i>
               <p>
                 Questions
@@ -214,7 +214,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h3 class="m-0 text-dark">Questions List</h3>
+            <h3 class="m-0 text-dark">@yield('heading')</h3>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">

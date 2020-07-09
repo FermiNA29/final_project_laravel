@@ -18,6 +18,7 @@ class CreateJawabansTable extends Migration
             $table->string('isi')->nullable();
             $table->integer('pertanyaan_id');
             $table->integer('users_id');
+            $table->timestamps();
         });
     }
 
