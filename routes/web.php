@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/welcome', function () {
+    return view('welcome2');
+});
+
 Route::get('/questions', 'QuestionsController@index');
 
 Route::group(['middleware'=>'auth'], function(){
