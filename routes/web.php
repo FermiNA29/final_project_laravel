@@ -23,3 +23,17 @@ Route::post('/jawabans', 'JawabanController@create');
 Route::delete('/jawabans/{id}', 'JawabanController@destroy');
 Route::get('/jawabans/{id}/edit', 'JawabanController@edit');
 Route::put('/jawabans/{id}', 'JawabanController@update');
+Route::get('/', function () {
+    return view('index');
+});
+
+Route::get('/questions', 'QuestionsController@index');
+
+Route::group(['middleware'=>'auth'], function(){
+    //ini buat login
+});
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
