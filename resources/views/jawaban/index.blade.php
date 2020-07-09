@@ -16,11 +16,6 @@
                 <img class="img-circle img-bordered-sm" src="../../dist/img/user1-128x128.jpg" alt="user image">
                 <span class="username">
                   <a href="#">Jonathan Burke Jr.</a> 
-                  <form action="/pertanyaans/{{$pertanyaan->id}}" method="POST">
-                    @csrf
-                    @method("delete")
-                    <button type="submit" class="btn btn-danger float-right">Delete</button>
-                  </form>
                 </span>
                 <span class="description">{{$pertanyaan->created_at}}</span>
                 <p><i class="far fa-newspaper mr-2"></i>{{$pertanyaan->judul}}</p>
