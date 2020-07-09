@@ -33,7 +33,6 @@ Route::get('/welcome', function () {
 
 Route::get('/questions', 'QuestionsController@index');
 
-Route::group(['middleware'=>'auth'], function(){
     //ini buat login
 });
 
