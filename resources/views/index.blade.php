@@ -63,90 +63,20 @@
             @endforeach
             <!-- /.post -->
         {{-- fermi edit --}}
-
       </div>
+      
       <div class="row mx-auto">
+        @foreach ($pertanyaans as $pertanyaan)
         <div class="col-sm-4">
           <div class="card">
             <div class="card-body text-center">
-              <p class="card-text">Judul Pertanyaan</p>
-              <p class="card-text">Isi Pertanyaan ?</p>
+              <p class="card-text">{{$pertanyaan->judul}}</p>
+              <p class="card-text">{{$pertanyaan->isi}}</p>
               <a href="/questions" class="btn btn-warning text-white">Lihat Pertanyaan</a>
             </div>
           </div>
         </div>
-        <div class="col-sm-4">
-          <div class="card">
-            <div class="card-body text-center">
-              <p class="card-text">Judul Pertanyaan</p>
-              <p class="card-text">Isi Pertanyaan ?</p>
-              <a href="/questions" class="btn btn-warning text-white">Lihat Pertanyaan</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="card">
-            <div class="card-body text-center">
-              <p class="card-text">Judul Pertanyaan</p>
-              <p class="card-text">Isi Pertanyaan ?</p>
-              <a href="/questions" class="btn btn-warning text-white">Lihat Pertanyaan</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="card">
-            <div class="card-body text-center">
-              <p class="card-text">Judul Pertanyaan</p>
-              <p class="card-text">Isi Pertanyaan ?</p>
-              <a href="/questions" class="btn btn-warning text-white">Lihat Pertanyaan</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="card">
-            <div class="card-body text-center">
-              <p class="card-text">Judul Pertanyaan</p>
-              <p class="card-text">Isi Pertanyaan ?</p>
-              <a href="/questions" class="btn btn-warning text-white">Lihat Pertanyaan</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="card">
-            <div class="card-body text-center">
-              <p class="card-text">Judul Pertanyaan</p>
-              <p class="card-text">Isi Pertanyaan ?</p>
-              <a href="/questions" class="btn btn-warning text-white">Lihat Pertanyaan</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="card">
-            <div class="card-body text-center">
-              <p class="card-text">Judul Pertanyaan</p>
-              <p class="card-text">Isi Pertanyaan ?</p>
-              <a href="/questions" class="btn btn-warning text-white">Lihat Pertanyaan</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="card">
-            <div class="card-body text-center">
-              <p class="card-text">Judul Pertanyaan</p>
-              <p class="card-text">Isi Pertanyaan ?</p>
-              <a href="/questions" class="btn btn-warning text-white">Lihat Pertanyaan</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="card">
-            <div class="card-body text-center">
-              <p class="card-text">Judul Pertanyaan</p>
-              <p class="card-text">Isi Pertanyaan ?</p>
-              <a href="/questions" class="btn btn-warning text-white">Lihat Pertanyaan</a>
-            </div>
-          </div>
-        </div>
+        @endforeach
       </div>
     </div>
   </div>
