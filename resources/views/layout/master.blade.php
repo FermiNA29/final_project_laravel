@@ -60,45 +60,7 @@
     @yield('nav')
 
       <!-- Sidebar Menu -->
-      <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item">
-            <a href="/pertanyaans/create" class="nav-link">
-              <i class="nav-icon far fa-plus-square"></i>
-              <p>
-                Add a Question
-              </p>
-            </a>
-          </li>
-          <li class="nav-header">Public</li>
-          <li class="nav-item">
-            <a href="/pertanyaans" class="nav-link active">
-              <i class="nav-icon fas fa-question"></i>
-              <p>
-                Questions
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tags"></i>
-              <p>
-                Tags
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-trophy"></i>
-              <p>
-                Badges
-              </p>
-            </a>
-          </li>
-        </ul>
-      </nav>
+
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->

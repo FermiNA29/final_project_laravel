@@ -8,6 +8,7 @@
 <a href= "/login" class="btn btn-primary ml-auto d-inline">Login</a>
 <a href="/register" class="btn btn-primary d-inline ml-3">Sign Up</a>
 @endsection
+
 @section('container')
 <div class="col-md-12">
     <div class="card">

@@ -10,82 +10,10 @@
           <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Unanswered</a></li>
         </ul>
       </div>
-      <div class="row mx-auto">
-        <div class="col-sm-4">
+
+        <div class="col-sm-12">
           <div class="card">
-            <div class="card-body text-center">
-              <p class="card-text">Judul Pertanyaan</p>
-              <p class="card-text">Isi Pertanyaan ?</p>
-              <a href="/questions" class="btn btn-warning text-white">Lihat Pertanyaan</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="card">
-            <div class="card-body text-center">
-              <p class="card-text">Judul Pertanyaan</p>
-              <p class="card-text">Isi Pertanyaan ?</p>
-              <a href="/questions" class="btn btn-warning text-white">Lihat Pertanyaan</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="card">
-            <div class="card-body text-center">
-              <p class="card-text">Judul Pertanyaan</p>
-              <p class="card-text">Isi Pertanyaan ?</p>
-              <a href="/questions" class="btn btn-warning text-white">Lihat Pertanyaan</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="card">
-            <div class="card-body text-center">
-              <p class="card-text">Judul Pertanyaan</p>
-              <p class="card-text">Isi Pertanyaan ?</p>
-              <a href="/questions" class="btn btn-warning text-white">Lihat Pertanyaan</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="card">
-            <div class="card-body text-center">
-              <p class="card-text">Judul Pertanyaan</p>
-              <p class="card-text">Isi Pertanyaan ?</p>
-              <a href="/questions" class="btn btn-warning text-white">Lihat Pertanyaan</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="card">
-            <div class="card-body text-center">
-              <p class="card-text">Judul Pertanyaan</p>
-              <p class="card-text">Isi Pertanyaan ?</p>
-              <a href="/questions" class="btn btn-warning text-white">Lihat Pertanyaan</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="card">
-            <div class="card-body text-center">
-              <p class="card-text">Judul Pertanyaan</p>
-              <p class="card-text">Isi Pertanyaan ?</p>
-              <a href="/questions" class="btn btn-warning text-white">Lihat Pertanyaan</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="card">
-            <div class="card-body text-center">
-              <p class="card-text">Judul Pertanyaan</p>
-              <p class="card-text">Isi Pertanyaan ?</p>
-              <a href="/questions" class="btn btn-warning text-white">Lihat Pertanyaan</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="card">
-            <div class="card-body text-center">
+            <div class="card-body">
               <p class="card-text">Judul Pertanyaan</p>
               <p class="card-text">Isi Pertanyaan ?</p>
               <a href="/questions" class="btn btn-warning text-white">Lihat Pertanyaan</a>
