@@ -17,7 +17,6 @@ class CreatePertanyaansTable extends Migration
             $table->increments('id');
             $table->string('judul');
             $table->string('isi')->nullable();
-            $table->string('tag');
             $table->timestamps();
 
             $table->integer('users_id');
