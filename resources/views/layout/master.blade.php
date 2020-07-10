@@ -36,7 +36,7 @@
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="/questions" class="nav-link">Questions</a>
+        <a href="/pertanyaans" class="nav-link">Questions</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="/tags" class="nav-link">Tags</a>
