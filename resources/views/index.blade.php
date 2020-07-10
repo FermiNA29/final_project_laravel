@@ -42,7 +42,7 @@
               </div>
               <!-- /.user-block -->
               <p>
-                {{$pertanyaan->isi}}
+                {!! $pertanyaan->isi !!}
               </p>
 
               <p>
@@ -65,7 +65,7 @@
         {{-- fermi edit --}}
       </div>
       
-      <div class="row mx-auto">
+      {{-- <div class="row mx-auto">
         @foreach ($pertanyaans as $pertanyaan)
         <div class="col-sm-4">
           <div class="card">
@@ -76,7 +76,7 @@
             </div>
           </div>
         </div>
-        @endforeach
+        @endforeach --}}
       </div>
     </div>
   </div>

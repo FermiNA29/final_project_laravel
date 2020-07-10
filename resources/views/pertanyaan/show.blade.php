@@ -23,7 +23,7 @@
               </div>
               <!-- /.user-block -->
               <p>
-                {{$pertanyaan->isi}}
+                {!!$pertanyaan->isi!!}
               </p>
             </div>
             <!-- /.post -->
