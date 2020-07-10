@@ -27,6 +27,7 @@
   <link rel="stylesheet" href="{{asset('/plugins/summernote/summernote-bs4.css')}}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  @stack('script-head')
 </head>
 
 <body class="">
@@ -163,6 +164,7 @@
   <script src="{{asset('dist/js/pages/dashboard.js')}}"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="{{asset('dist/js/demo.js')}}"></script>
+  @stack('scripts')
 </body>
 
 </html>
