@@ -9,4 +9,9 @@ class Pertanyaan extends Model
     //
     protected $table = "pertanyaans";
     protected $guarded = [];
+
+    public function users()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

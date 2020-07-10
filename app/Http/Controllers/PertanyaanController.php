@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Pertanyaan;
 use App\Jawaban;
+// use App\User;
+use App\Models\User;
 
 class PertanyaanController extends Controller
 {
@@ -15,7 +17,15 @@ class PertanyaanController extends Controller
      */
     public function index()
     {
-        $pertanyaans = Pertanyaan::all();
+        // $pertanyaans = Pertanyaan::all();
+        $pertanyaans = Pertanyaan::with('users')->get();
+        // $pertanyaans = DB::table('articles')
+        // ->select('articles.id as articles_id', ..... )
+        // ->join('categories', 'articles.categories_id', '=', 'categories.id')
+        // ->join('users', 'articles.user_id', '=', 'user.id')
+
+        // ->get()
+        // dd($pertanyaans);
         return view('index', compact('pertanyaans'));
     }
 
@@ -40,10 +50,10 @@ class PertanyaanController extends Controller
         $pertanyaan = Pertanyaan::create([
             'judul' => $request->judul,
             'isi' => $request->isi,
+            'tags' => $request->tags,
             'users_id' => $request->users_id
         ]);
         return redirect('/pertanyaans');
-        
     }
 
     /**
@@ -54,9 +64,9 @@ class PertanyaanController extends Controller
      */
     public function show($id)
     {
-        $jawabans = Jawaban::where('pertanyaan_id',$id)->get();
-        $pertanyaan = Pertanyaan::where('id',$id)->first();
-        return view('pertanyaan.show', compact('pertanyaan','jawabans'));
+        $jawabans = Jawaban::where('pertanyaan_id', $id)->get();
+        $pertanyaan = Pertanyaan::where('id', $id)->first();
+        return view('pertanyaan.show', compact('pertanyaan', 'jawabans'));
     }
 
     /**
@@ -83,6 +93,7 @@ class PertanyaanController extends Controller
         $pertanyaan = Pertanyaan::find($id);
         $pertanyaan->judul = $request->judul;
         $pertanyaan->isi = $request->isi;
+        $pertanyaan->tags = $request->tags;
         $pertanyaan->save();
         return redirect('/pertanyaans');
     }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,43 +28,58 @@
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
+
 <body class="">
-<div class="wrapper">
+  <div class="wrapper">
 
-  <!-- Navbar -->
-  <nav class=" navbar navbar-expand navbar-white navbar-light">
-    <!-- Left navbar links -->
-    <ul class="navbar-nav">
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="/questions" class="nav-link">Questions</a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="/tags" class="nav-link">Tags</a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="/badges" class="nav-link">Bagdes</a>
-      </li>
-    </ul>
+    <!-- Navbar -->
+    <nav class=" navbar navbar-expand navbar-white navbar-light">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="/" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="/pertanyaans" class="nav-link">Questions</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="#" class="nav-link">Tags</a>
+        </li>
+      </ul>
 
-    <!-- SEARCH FORM -->
-    <form class="form-inline ml-3">
-      <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-        <div class="input-group-append">
-          <button class="btn btn-navbar" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
+      <!-- SEARCH FORM -->
+      <form class="form-inline ml-3">
+        <div class="input-group input-group-sm">
+          <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-navbar" type="submit">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
 
-    @yield('nav')
+      @if(empty(Auth::user()->id))
+      <a href="/login" class="btn btn-primary ml-auto d-inline">Login</a>
+      <a href="/register" class="btn btn-primary d-inline ml-3">Sign Up</a>
+      @else
+      <div class="float-right"> Welcome, {{Auth::user()->name }}</div><br>
+      <a class="btn btn-primary ml-auto d-inline ml-3" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;" hidden>
+          @csrf
+        </form>
+        Logout
+      </a>
+      @endif
 
       <!-- Sidebar Menu -->
 
       <!-- /.sidebar-menu -->
-    </div>
-    <!-- /.sidebar -->
+  </div>
+  <!-- /.sidebar -->
   </aside>
   </nav>
 
@@ -103,49 +119,50 @@
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
-    
+
   </aside>
   <!-- /.control-sidebar -->
-</div>
-<!-- ./wrapper -->
-<footer class="container-fluid text-center">
-  <strong>Copyright &copy; 2020 <a href="http://adminlte.io">SanberCode Group</a>.</strong>
-  All rights reserved.
-</footer>
+  </div>
+  <!-- ./wrapper -->
+  <footer class="container-fluid text-center">
+    <strong>Copyright &copy; 2020 <a href="http://adminlte.io">SanberCode Group</a>.</strong>
+    All rights reserved.
+  </footer>
 
-<!-- jQuery -->
-<script src="{{asset('/plugins/jquery/jquery.min.js')}}"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="{{asset('/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button)
-</script>
-<!-- Bootstrap 4 -->
-<script src="{{asset('/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-<!-- ChartJS -->
-<script src="{{asset('/plugins/chart.js/Chart.min.js')}}"></script>
-<!-- Sparkline -->
-<script src="{{asset('/plugins/sparklines/sparkline.js')}}"></script>
-<!-- JQVMap -->
-<script src="{{asset('/plugins/jqvmap/jquery.vmap.min.js')}}"></script>
-<script src="{{asset('/plugins/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
-<!-- jQuery Knob Chart -->
-<script src="{{asset('/plugins/jquery-knob/jquery.knob.min.js')}}"></script>
-<!-- daterangepicker -->
-<script src="{{asset('/plugins/moment/moment.min.js')}}"></script>
-<script src="{{asset('/plugins/daterangepicker/daterangepicker.js')}}"></script>
-<!-- Tempusdominus Bootstrap 4 -->
-<script src="{{asset('/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
-<!-- Summernote -->
-<script src="{{asset('/plugins/summernote/summernote-bs4.min.js')}}"></script>
-<!-- overlayScrollbars -->
-<script src="{{asset('/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
-<!-- AdminLTE App -->
-<script src="{{asset('dist/js/adminlte.js')}}"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{asset('dist/js/pages/dashboard.js')}}"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="{{asset('dist/js/demo.js')}}"></script>
+  <!-- jQuery -->
+  <script src="{{asset('/plugins/jquery/jquery.min.js')}}"></script>
+  <!-- jQuery UI 1.11.4 -->
+  <script src="{{asset('/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
+  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+  <script>
+    $.widget.bridge('uibutton', $.ui.button)
+  </script>
+  <!-- Bootstrap 4 -->
+  <script src="{{asset('/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <!-- ChartJS -->
+  <script src="{{asset('/plugins/chart.js/Chart.min.js')}}"></script>
+  <!-- Sparkline -->
+  <script src="{{asset('/plugins/sparklines/sparkline.js')}}"></script>
+  <!-- JQVMap -->
+  <script src="{{asset('/plugins/jqvmap/jquery.vmap.min.js')}}"></script>
+  <script src="{{asset('/plugins/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
+  <!-- jQuery Knob Chart -->
+  <script src="{{asset('/plugins/jquery-knob/jquery.knob.min.js')}}"></script>
+  <!-- daterangepicker -->
+  <script src="{{asset('/plugins/moment/moment.min.js')}}"></script>
+  <script src="{{asset('/plugins/daterangepicker/daterangepicker.js')}}"></script>
+  <!-- Tempusdominus Bootstrap 4 -->
+  <script src="{{asset('/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
+  <!-- Summernote -->
+  <script src="{{asset('/plugins/summernote/summernote-bs4.min.js')}}"></script>
+  <!-- overlayScrollbars -->
+  <script src="{{asset('/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
+  <!-- AdminLTE App -->
+  <script src="{{asset('dist/js/adminlte.js')}}"></script>
+  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+  <script src="{{asset('dist/js/pages/dashboard.js')}}"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="{{asset('dist/js/demo.js')}}"></script>
 </body>
+
 </html>

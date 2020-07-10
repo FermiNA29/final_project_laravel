@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 @section('heading')
-    Create Question
+Create Question
 @endsection
 
 @section('container')
@@ -18,11 +18,15 @@
                 <input type="text" class="form-control" name="isi" placeholder="Enter Question" id="isi">
             </div>
             <div class="form-group">
+                <label for="isi">Tags :</label>
+                <input type="text" class="form-control" name="tags" placeholder="Enter Tags" id="isi">
+            </div>
+            <div class="form-group" hidden>
                 <label for="users_id">users_id:</label>
-                <input type="text" class="form-control" name="users_id" placeholder="Enter Question" id="users_id">
+                <input type="text" class="form-control" name="users_id" placeholder="Enter Question" id="users_id" value="{{ Auth::user()->id }}">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
-  </div>
+</div>
 @endsection
