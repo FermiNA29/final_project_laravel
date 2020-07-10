@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('layout.master2')
 
 @push('script-head')
 <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>

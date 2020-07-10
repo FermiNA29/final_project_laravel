@@ -86,7 +86,7 @@
 
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="">
+  <div class="container">
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
