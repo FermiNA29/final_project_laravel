@@ -46,4 +46,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Jawaban');
     }
+
+    public function vote_unvote_pertanyaan()
+    {
+        return $this->hasMany('App\VoteUnvotePertanyaan');
+    }
 }

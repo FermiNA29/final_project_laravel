@@ -5,20 +5,22 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Pertanyaan;
 use App\Jawaban;
-// use App\User;
-use App\Models\User;
+// use App\Models\User;
+use App\User;
+use App\VoteUnvotePertanyaan;
 
 class PertanyaanController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        // $pertanyaans = Pertanyaan::all();
-        $pertanyaans = Pertanyaan::with('users')->get();
+        $pertanyaans = Pertanyaan::all();
+        // $pertanyaans = Pertanyaan::with('users')->get();
+        // $pertanyaans = Pertanyaan::with('vote_unvote_pertanyaan')->get();
+
         // $pertanyaans = DB::table('articles')
         // ->select('articles.id as articles_id', ..... )
         // ->join('categories', 'articles.categories_id', '=', 'categories.id')
@@ -108,6 +110,37 @@ class PertanyaanController extends Controller
     {
         $pertanyaan = Pertanyaan::find($id);
         $pertanyaan->delete();
+        return redirect('/pertanyaans');
+    }
+
+    public function upvote(Request $request)
+    {
+
+        $new_pertanyaan = VoteUnvotePertanyaan::firstOrCreate([
+            "users_id" => $request["users_id"],
+            "pertanyaans_id" => $request["pertanyaans_id"],
+            "poin" => 15
+        ]);
+
+        $users_id = $request->users_id;
+
+        $affectedRows = User::where('id', '=', $users_id)->increment('poin', 10);
+        return redirect('/pertanyaans');
+    }
+
+    public function downvote(Request $request)
+    {
+        $new_pertanyaan = VoteUnvotePertanyaan::firstOrCreate([
+            "users_id" => $request["users_id"],
+            "pertanyaans_id" => $request["pertanyaans_id"],
+            "poin" => -10
+        ]);
+
+        $users_id = $request->users_id;
+
+        $affectedRows = User::where('id', '=', $users_id)->decrement('poin', 1);
+
+
         return redirect('/pertanyaans');
     }
 }

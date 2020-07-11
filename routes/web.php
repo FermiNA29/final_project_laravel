@@ -30,8 +30,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/pertanyaans/{pertanyaan}/edit', 'PertanyaanController@edit');
     Route::put('/pertanyaans/{pertanyaan}', 'PertanyaanController@update');
     Route::delete('/pertanyaans/{pertanyaan}', 'PertanyaanController@destroy');
+    Route::get('/pertanyaans/{user}/{pertanyaan}/upvote', 'PertanyaanController@upvote');
+    Route::get('/pertanyaans/{user}/{pertanyaan}/downvote', 'PertanyaanController@downvote');
 });
 
+Route::post('/upvote_pertanyaan', 'PertanyaanController@upvote');
+Route::post('/downvote_pertanyaan', 'PertanyaanController@downvote');
 
 
 Route::group(['middleware' => 'auth'], function () {

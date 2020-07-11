@@ -14,4 +14,14 @@ class Pertanyaan extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    public function vote_pertanyaan()
+    {
+        return $this->belongsToMany('App\VoteUnvotePertanyaan');
+    }
+
+    // public function vote_unvote_pertanyaan()
+    // {
+    //     return $this->belongsToMany('App\VoteUnvotePertanyaan', 'vote_unvote_pertanyaans', 'users_id', 'pertanyaans_id');
+    // }
 }
