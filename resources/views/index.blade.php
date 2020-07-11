@@ -40,7 +40,7 @@ Questions List
                   @endif
                 </span>
                 <span class="description">{{$pertanyaan->created_at}}</span>
-                <p><i class="far fa-newspaper mr-2"></i>{{$pertanyaan->judul}}</p>
+                <p><i class="far fa-newspaper mr-2"></i>{{$pertanyaan->id}}</p>
               </div>
               <!-- /.user-block -->
               <p>
@@ -62,8 +62,8 @@ Questions List
                 @endif
                 <br>
                 <a href="/upvote_pertanyaan" onclick="event.preventDefault();
-                                                     document.getElementById('upvote_pertanyaan-form').submit();">
-                  <form id="upvote_pertanyaan-form" action="/upvote_pertanyaan" method="POST">
+                                                     document.getElementById('upvote_pertanyaan-form{{$pertanyaan->id}}').submit();">
+                  <form id="upvote_pertanyaan-form{{$pertanyaan->id}}" action="/upvote_pertanyaan" method="POST">
                     @csrf
                     <input type="text" name="users_id" value="{{Auth::id()}}" id="users_id" hidden>
                     <input type="text" name="pertanyaans_id" value="{{$pertanyaan->id}}" id="pertanyaans_id" hidden>
@@ -82,6 +82,12 @@ Questions List
                 </a>
 
                 <span class="float-right">
+
+                  @foreach ($vote as $votes)
+                  @if ($pertanyaan->id == $votes->pertanyaans_id)
+                  vote : {{$votes->sum_poin}}
+                  @endif
+                  @endforeach
                   <a href="/jawabans/{{$pertanyaan->id}}" class="link-black text-sm">
                     <i class="far fa-comments mr-1"></i> Comments
                   </a>

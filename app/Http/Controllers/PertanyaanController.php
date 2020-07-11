@@ -17,9 +17,14 @@ class PertanyaanController extends Controller
      */
     public function index()
     {
-        $pertanyaans = Pertanyaan::all();
-        // $pertanyaans = Pertanyaan::with('users')->get();
+        // $pertanyaans = Pertanyaan::all();
+        $pertanyaans = Pertanyaan::with('users')->get();
         // $pertanyaans = Pertanyaan::with('vote_unvote_pertanyaan')->get();
+        // $vote = VoteUnvotePertanyaan::with('pertanyaans')->get();
+        $vote = VoteUnvotePertanyaan::selectRaw('pertanyaans_id, sum(poin) as sum_poin')->groupBy('pertanyaans_id')
+            ->get();
+
+
 
         // $pertanyaans = DB::table('articles')
         // ->select('articles.id as articles_id', ..... )
@@ -27,8 +32,9 @@ class PertanyaanController extends Controller
         // ->join('users', 'articles.user_id', '=', 'user.id')
 
         // ->get()
+        // dd($vote);
         // dd($pertanyaans);
-        return view('index', compact('pertanyaans'));
+        return view('index', compact('pertanyaans', 'vote'));
     }
 
     /**
@@ -115,12 +121,15 @@ class PertanyaanController extends Controller
 
     public function upvote(Request $request)
     {
-
-        $new_pertanyaan = VoteUnvotePertanyaan::firstOrCreate([
-            "users_id" => $request["users_id"],
-            "pertanyaans_id" => $request["pertanyaans_id"],
-            "poin" => 15
-        ]);
+        // dd($request["pertanyaans_id"]);
+        $new_pertanyaan = VoteUnvotePertanyaan::firstOrCreate(
+            // ["pertanyaans_id" => $request["pertanyaans_id"]],
+            [
+                "users_id" => $request["users_id"],
+                "pertanyaans_id" => $request["pertanyaans_id"],
+                "poin" => 15
+            ]
+        );
 
         $users_id = $request->users_id;
 
@@ -130,11 +139,13 @@ class PertanyaanController extends Controller
 
     public function downvote(Request $request)
     {
-        $new_pertanyaan = VoteUnvotePertanyaan::firstOrCreate([
-            "users_id" => $request["users_id"],
-            "pertanyaans_id" => $request["pertanyaans_id"],
-            "poin" => -10
-        ]);
+        $new_pertanyaan = VoteUnvotePertanyaan::firstOrCreate(
+            [
+                "users_id" => $request["users_id"],
+                "pertanyaans_id" => $request["pertanyaans_id"],
+                "poin" => -10
+            ]
+        );
 
         $users_id = $request->users_id;
 

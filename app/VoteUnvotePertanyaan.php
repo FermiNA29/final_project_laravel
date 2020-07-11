@@ -17,6 +17,11 @@ class VoteUnvotePertanyaan extends Model
 
     public function pertanyaans()
     {
-        return $this->hasOne('App\Pertanyaan');
+        return $this->belongsTo('App\Pertanyaan');
+    }
+
+    public function users()
+    {
+        return $this->belongsTo('App\User');
     }
 }
