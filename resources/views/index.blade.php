@@ -40,11 +40,11 @@ Questions List
                   @endif
                 </span>
                 <span class="description">{{$pertanyaan->created_at}}</span>
-                <p><i class="far fa-newspaper mr-2"></i>{{$pertanyaan->id}}</p>
+                <p><i class="far fa-newspaper mr-2"></i>{{$pertanyaan->judul}}</p>
               </div>
               <!-- /.user-block -->
               <p>
-                {{$pertanyaan->isi}}
+                {!!$pertanyaan->isi!!}
 
               </p>
               @if ($pertanyaan->tags != "")

@@ -26,7 +26,7 @@ Comment
             </div>
             <!-- /.user-block -->
             <p>
-              {{$pertanyaan->isi}}
+              {!!$pertanyaan->isi!!}
             </p>
 
             <p>
@@ -53,20 +53,20 @@ Comment
               <img class="img-circle img-bordered-sm" src="../../dist/img/user7-128x128.jpg" alt="User Image">
               <span class="username">
                 <a href="#">{{$jawaban->users->name}}</a>
+              </span>
+              <span class="description">{{$jawaban->created_at}}</span>
                 @if(!empty(Auth::user()->id) && (Auth::user()->id == $jawaban->users_id) )
                 <form action="/jawabans/{{$pertanyaan->id}}" method="POST">
                   @csrf
                   @method("delete")
                   <button type="submit" class="btn btn-danger float-right">Delete</button>
                   </p>
-
                   @endif
-              </span>
-              <span class="description">{{$jawaban->created_at}}</span>
+              
             </div>
             <!-- /.user-block -->
             <p>
-              {{$jawaban['isi']}}
+              {!!$jawaban['isi']!!}
             </p>
 
 

@@ -17,7 +17,7 @@
             <div class="form-group">
                 <label for="isi">Question:</label>
                 <input type="hidden" name="pertanyaan_id" value="{{$jawaban->pertanyaan_id}}">
-                <input type="text" class="form-control" name="isi" value="{{$jawaban->isi}}" placeholder="Enter Question" id="isi">
+                {{-- <input type="text" class="form-control" name="isi" value="{{$jawaban->isi}}" placeholder="Enter Question" id="isi"> --}}
                 <textarea name="isi" class="form-control my-editor">{!! old('isi', $isi ?? '') !!} {!!$jawaban->isi!!}</textarea>
             </div>
             <button type="submit" class="btn btn-primary">Edit</button>

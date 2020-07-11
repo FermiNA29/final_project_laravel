@@ -20,6 +20,7 @@ Create Question
             <div class="form-group">
                 <label for="isi">Question:</label>
                 {{-- <input type="text" class="form-control" name="isi" placeholder="Enter Question" id="isi"> --}}
+                {{-- <textarea name="isi" class="form-control my-editor">{!! old('isi', $isi ?? '' ?? '') !!}</textarea> --}}
                 <textarea name="isi" class="form-control my-editor">{!! old('isi', $isi ?? '') !!}</textarea>
             </div>
             <div class="form-group">

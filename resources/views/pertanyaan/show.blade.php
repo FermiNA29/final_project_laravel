@@ -41,7 +41,7 @@
               </div>
               <!-- /.user-block -->
               <p>
-                {{$jawaban->isi}}
+                {!!$jawaban->isi!!}
               </p>
 
               
