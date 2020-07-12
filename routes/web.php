@@ -71,6 +71,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 //     return redirect('pertanyaans');
 // });
 
+// WYSIWYG Editor
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });

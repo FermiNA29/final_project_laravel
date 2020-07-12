@@ -40,7 +40,6 @@ Comment
               @csrf
               <input type="hidden" name="users_id" value=" {{ Auth::user()->id }}">
               <input type="hidden" name="pertanyaan_id" value="{{$pertanyaan->id}}">
-              <input class="form-control form-control-sm" type="text" name="isi" placeholder="Type a comment">
               <textarea name="isi" class="form-control my-editor">{!! old('isi', $isi ?? '') !!}</textarea>
               <button type="submit" class="btn btn-success mt-2">Comment</button>
             </form>
