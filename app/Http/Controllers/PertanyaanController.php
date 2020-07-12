@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\DB;
 use App\Pertanyaan;
 use App\Jawaban;
 // use App\Models\User;
@@ -24,14 +26,6 @@ class PertanyaanController extends Controller
         $vote = VoteUnvotePertanyaan::selectRaw('pertanyaans_id, sum(poin) as sum_poin')->groupBy('pertanyaans_id')
             ->get();
 
-
-
-        // $pertanyaans = DB::table('articles')
-        // ->select('articles.id as articles_id', ..... )
-        // ->join('categories', 'articles.categories_id', '=', 'categories.id')
-        // ->join('users', 'articles.user_id', '=', 'user.id')
-
-        // ->get()
         // dd($vote);
         // dd($pertanyaans);
         return view('index', compact('pertanyaans', 'vote'));

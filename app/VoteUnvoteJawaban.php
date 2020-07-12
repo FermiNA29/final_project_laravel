@@ -4,11 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class VoteUnvotePertanyaan extends Model
+class VoteUnvoteJawaban extends Model
 {
+    //
+
     protected $guarded = [];
     public $timestamps = false;
-    protected $table = 'vote_unvote_pertanyaans';
 
 
     public function vote_unvote_user()
@@ -16,9 +17,9 @@ class VoteUnvotePertanyaan extends Model
         return $this->belongsToMany('App\User', 'users', 'users_id', 'poin');
     }
 
-    public function pertanyaans()
+    public function jawabans()
     {
-        return $this->belongsTo('App\Pertanyaan');
+        return $this->belongsTo('App\Jawaban');
     }
 
     public function users()

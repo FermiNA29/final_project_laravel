@@ -34,14 +34,21 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/pertanyaans/{user}/{pertanyaan}/downvote', 'PertanyaanController@downvote');
 });
 
-Route::post('/upvote_pertanyaan', 'PertanyaanController@upvote');
-Route::post('/downvote_pertanyaan', 'PertanyaanController@downvote');
 
+Route::group(['middleware' => 'auth'], function () {
+    Route::post('/upvote_pertanyaan', 'PertanyaanController@upvote');
+    Route::post('/downvote_pertanyaan', 'PertanyaanController@downvote');
+});
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::post('/upvote_jawaban', 'JawabanController@upvote');
+    Route::post('/downvote_jawaban', 'JawabanController@downvote');
+});
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/jawabans/{id}', 'JawabanController@index');
     Route::post('/jawabans', 'JawabanController@create');
-    Route::delete('/jawabans/{id}', 'JawabanController@destroy');
+    Route::delete('/jawabans/{id}/{idPertanyaan}', 'JawabanController@destroy');
     Route::get('/jawabans/{id}/edit', 'JawabanController@edit');
     Route::put('/jawabans/{id}', 'JawabanController@update');
 });

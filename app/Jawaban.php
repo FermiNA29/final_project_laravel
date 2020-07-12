@@ -14,4 +14,8 @@ class Jawaban extends Model
     {
         return $this->belongsTo('App\User');
     }
+    public function vote_unvote_jawaban()
+    {
+        return $this->belongsToMany('App\VoteUnvoteJawaban', 'vote_unvote_jawabans', 'users_id', 'jawabans_id');
+    }
 }

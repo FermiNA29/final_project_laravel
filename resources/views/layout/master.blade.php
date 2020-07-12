@@ -64,7 +64,7 @@
       <a href="/login" class="btn btn-primary ml-auto d-inline">Login</a>
       <a href="/register" class="btn btn-primary d-inline ml-3">Sign Up</a>
       @else
-      <div class="float-right"> Welcome, {{Auth::user()->name }}</div><br>
+      <div class="float-right"> Welcome, {{Auth::user()->name }} (Score : {{Auth::user()->poin}}) </div><br>
       <a class="btn btn-primary ml-auto d-inline ml-3" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
 
