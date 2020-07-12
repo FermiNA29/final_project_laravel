@@ -103,7 +103,7 @@
           </li>
           <li class="nav-header">Public</li>
           <li class="nav-item">
-            <a href="#" class="nav-link active">
+            <a href="/pertanyaans" class="nav-link active">
               <i class="nav-icon fas fa-question"></i>
               <p>
                 Questions
